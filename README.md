@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Start app:
 
-## Getting Started
+1. start docker and "docker-compose up --build" (app can already be used after running this command)
+2. "npm install" (optional but recommended to make VS Code errors disappear, during code review)
 
-First, run the development server:
+Things I Haven't Addressed in the Test Task:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Messaging System: Right now, messages only live in the browser's memory and disappear if you refresh the page. In a real app, we'd set up a socket connection to keep everything synced with a database. By hovering on chat list, + icon is displayed which redirects user to create new message page, but after clicking "send" button it simply logs out (not implemented because of test app state management)
+2. Form Performance: I haven't optimised how the forms handle user input. I'd optimise for speed and smoothness by managing how often updates are processed to prevent excessive re-renders.
+3. Better Data Structure: The mock data I've used works for testing, but in a live application, I'd rethink how it's organised to scale better and make it more efficient to work with in a database and front end (If I was back end developer).
+4. Auth: For now, I'm using a basic method (localStorage) to keep users logged in. It's easy to mess with, so in a real-world scenario, I'd implement different authentication system (based on backend)
+5. User Feedback Improvements: Instead of simple alerts I would do modal pop ups in real app.
+6. Responsive Design: current styles work on most screens but they're not fully responsive yet. In a production app it should be fully responsive.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Technologies I have used:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* Next.js
+* TypeScript
+* Tailwind CSS
+* Docker
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
